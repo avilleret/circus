@@ -1,11 +1,11 @@
-#N canvas 906 211 355 755 10;
+#N canvas 898 251 355 755 10;
 #X obj 61 652 loadbang;
 #X msg 61 674 \; pd dsp 1;
 #X obj 28 299 env~;
 #X floatatom 28 341 5 0 0 0 - - -, f 5;
 #X obj 68 299 env~;
 #X floatatom 68 341 5 0 0 0 - - -, f 5;
-#N canvas 0 132 541 507 sendOSC 0;
+#N canvas 0 171 642 507 sendOSC 1;
 #X obj 221 170 osc/packOSC;
 #X obj 221 299 net/udpsend;
 #X msg 261 269 disconnect;
@@ -21,6 +21,10 @@
 1;
 #X obj 338 91 inlet;
 #X obj 221 91 inlet;
+#X obj 423 177 osc/unpackOSC;
+#X obj 423 199 osc/routeOSC /reconnect;
+#X obj 423 221 t b b;
+#X obj 423 157 net/udpreceive 6666;
 #X connect 0 0 3 0;
 #X connect 1 0 3 1;
 #X connect 1 0 8 0;
@@ -36,8 +40,13 @@
 #X connect 10 0 0 0;
 #X connect 12 0 10 0;
 #X connect 13 0 9 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 5 0;
+#X connect 16 1 2 0;
+#X connect 17 0 14 0;
 #X restore 252 359 pd sendOSC;
-#N canvas 676 625 614 397 readsf~ 0;
+#N canvas 660 246 614 397 readsf~ 0;
 #X obj 305 73 inlet;
 #X obj 425 3 inlet;
 #X obj 164 153 ggee/getdir;
@@ -70,7 +79,7 @@
 #X obj 457 85 abs;
 #X obj 457 131 sel 1;
 #X obj 411 129 f;
-#X obj 457 109 > 5;
+#X obj 457 109 > 1;
 #X connect 0 0 4 0;
 #X connect 1 0 25 0;
 #X connect 2 0 18 0;
@@ -104,7 +113,7 @@
 #X connect 28 0 16 0;
 #X connect 29 0 27 0;
 #X restore 164 359 pd readsf~;
-#N canvas 997 580 701 497 source 1;
+#N canvas 1162 508 701 497 source 1;
 #X obj 294 73 ggee/getdir;
 #X obj 294 50 loadbang;
 #X floatatom 313 230 5 0 0 0 - - -, f 5;
@@ -200,12 +209,12 @@
 -1 -1 1;
 #X text 182 109 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7793 1;
+-1 -1 7915 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7766 1;
+-1 -1 7996 1;
 #X text 182 126 serato face A;
 #X text 182 141 serato face B;
-#N canvas 86 249 767 625 analysis 1;
+#N canvas 83 262 767 625 analysis 0;
 #X floatatom 253 381 5 0 0 0 speed - -, f 5;
 #X obj 389 293 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -236,9 +245,9 @@
 #X floatatom 168 492 5 0 0 0 - - -, f 5;
 #X obj 163 334 vinylcontrol~ serato_2a 10, f 27;
 #X obj 447 476 puremapping/stream_check;
-#X obj 447 550 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 447 550 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 336 96 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 336 96 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 336 116 sel 0 1;
 #X msg 336 143 vinyl serato_2a;

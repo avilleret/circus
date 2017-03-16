@@ -1,4 +1,4 @@
-#N canvas 667 237 1021 832 10;
+#N canvas 344 80 1021 662 10;
 #X declare -lib zexy;
 #X text 260 104 audiosettings - query and manipulate audio-settings
 ;
@@ -45,7 +45,10 @@
 #X obj 883 487 outlet;
 #X obj 141 350 route devices, f 14;
 #X msg 726 649 driver ALSA \, params @output \$1 2;
-#X msg 317 649 driver ALSA \, params @input \$1 2;
+#X msg 80 137 listparams;
+#X obj 364 319 print;
+#X msg 316 649 driver ALSA \, params @input \$1 2 \, params @rate 44100
+;
 #X connect 1 0 13 0;
 #X connect 3 0 4 0;
 #X connect 4 0 41 0;
@@ -72,11 +75,12 @@
 #X connect 19 0 1 0;
 #X connect 20 0 16 0;
 #X connect 22 0 17 0;
-#X connect 22 1 43 0;
+#X connect 22 1 45 0;
 #X connect 23 0 9 0;
 #X connect 23 1 11 0;
 #X connect 24 0 1 0;
 #X connect 26 0 3 0;
+#X connect 26 0 44 0;
 #X connect 29 0 30 0;
 #X connect 29 1 31 0;
 #X connect 30 0 36 0;
@@ -94,4 +98,5 @@
 #X connect 41 1 5 0;
 #X connect 41 1 29 0;
 #X connect 42 0 26 0;
-#X connect 43 0 26 0;
+#X connect 43 0 13 0;
+#X connect 45 0 26 0;

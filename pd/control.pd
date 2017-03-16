@@ -1,4 +1,4 @@
-#N canvas 871 107 355 708 10;
+#N canvas 869 107 355 708 10;
 #X obj 61 652 loadbang;
 #X msg 61 674 \; pd dsp 1;
 #X obj 28 299 env~;
@@ -58,7 +58,7 @@
 #X connect 22 1 18 0;
 #X connect 22 2 3 1;
 #X restore 252 359 pd sendOSC;
-#N canvas 357 191 614 397 readsf~ 1;
+#N canvas 376 200 614 397 readsf~ 0;
 #X obj 355 66 inlet;
 #X obj 475 23 inlet;
 #X obj 261 87 ggee/getdir;
@@ -157,7 +157,7 @@
 #X connect 36 0 22 0;
 #X connect 36 0 20 1;
 #X restore 164 359 pd readsf~;
-#N canvas 1 96 1364 605 source 1;
+#N canvas 128 162 1364 605 source 0;
 #X obj 294 73 ggee/getdir;
 #X obj 294 50 loadbang;
 #X floatatom 313 194 5 0 0 0 - - -, f 5;
@@ -299,9 +299,9 @@
 -1 -1 1;
 #X text 182 109 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7896 1;
+-1 -1 5577 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7869 1;
+-1 -1 5571 1;
 #X text 182 126 serato face A;
 #X text 182 141 serato face B;
 #N canvas 570 108 767 625 analysis 0;

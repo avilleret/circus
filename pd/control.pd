@@ -1,11 +1,11 @@
-#N canvas 866 147 355 708 10;
+#N canvas 864 107 355 708 10;
 #X obj 61 652 loadbang;
 #X msg 61 674 \; pd dsp 1;
 #X obj 28 299 env~;
 #X floatatom 28 341 5 0 0 0 - - -, f 5;
 #X obj 68 299 env~;
 #X floatatom 68 341 5 0 0 0 - - -, f 5;
-#N canvas 0 194 642 507 sendOSC 0;
+#N canvas 220 165 642 507 sendOSC 1;
 #X obj 221 170 osc/packOSC;
 #X obj 221 299 net/udpsend;
 #X msg 261 269 disconnect;
@@ -305,9 +305,9 @@
 -1 -1 1;
 #X text 182 109 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6089 1;
+-1 -1 5109 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6090 1;
+-1 -1 5112 1;
 #X text 182 126 serato face A;
 #X text 182 141 serato face B;
 #N canvas 570 108 767 625 analysis 0;
@@ -409,11 +409,11 @@
 #X restore 164 260 pd analysis;
 #X floatatom 282 296 5 0 0 0 - - -, f 5;
 #X floatatom 124 301 5 0 0 0 - - -, f 5;
-#N canvas 179 327 1024 332 load 0;
+#N canvas 175 331 1024 332 load 1;
 #X obj 273 48 route 9 10 11 12 25 26 27 28;
-#X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 323 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -452,13 +452,14 @@
 #X connect 7 0 8 0;
 #X restore 273 27 pd notein;
 #X obj 133 294 outlet son;
-#X obj 538 297 outlet image;
 #X obj 133 142 sel 1;
 #X msg 133 175 PARTIE1A.wav;
 #X msg 142 198 PARTIE1A.mov;
 #X obj 243 142 sel 1;
 #X msg 243 175 PARTIE1B.wav;
 #X msg 252 198 PARTIE1B.mov;
+#X obj 538 297 outlet image;
+#X obj 538 267 symbol;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 0 2 3 0;
@@ -467,18 +468,19 @@
 #X connect 0 5 6 0;
 #X connect 0 6 7 0;
 #X connect 0 7 8 0;
-#X connect 1 0 12 0;
-#X connect 2 0 15 0;
+#X connect 1 0 11 0;
+#X connect 2 0 14 0;
 #X connect 9 0 0 0;
-#X connect 12 0 13 0;
-#X connect 12 0 14 0;
-#X connect 13 0 10 0;
-#X connect 14 0 11 0;
-#X connect 15 0 16 0;
-#X connect 15 0 17 0;
-#X connect 16 0 10 0;
-#X connect 17 0 11 0;
-#X restore 167 541 pd load;
+#X connect 11 0 12 0;
+#X connect 11 0 13 0;
+#X connect 12 0 10 0;
+#X connect 13 0 18 0;
+#X connect 14 0 15 0;
+#X connect 14 0 16 0;
+#X connect 15 0 10 0;
+#X connect 16 0 18 0;
+#X connect 18 0 17 0;
+#X restore 134 367 pd load;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 2 0 11 0;
@@ -495,3 +497,5 @@
 #X connect 15 1 7 2;
 #X connect 15 1 16 0;
 #X connect 15 1 6 2;
+#X connect 18 0 7 0;
+#X connect 18 1 6 0;

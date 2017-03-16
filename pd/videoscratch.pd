@@ -70,7 +70,7 @@
 #X msg 90 360 open \$2/../video/\$1;
 #X msg 190 137 PARTIE1A.mov;
 #X msg 200 156 PARTIE1B.mov;
-#X obj 111 428 osc/routeOSC /speed /position /ping /quit /load;
+#X obj 111 428 osc/routeOSC /speed /position /ping /quit /open;
 #X connect 0 0 26 0;
 #X connect 1 0 25 0;
 #X connect 1 1 9 0;

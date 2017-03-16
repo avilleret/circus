@@ -1,4 +1,4 @@
-#N canvas 548 197 520 662 10;
+#N canvas 663 94 520 662 10;
 #X declare -path abs -path bin;
 #X obj 61 652 loadbang;
 #X msg 61 674 \; pd dsp 1;
@@ -63,7 +63,7 @@
 #X connect 23 0 24 0;
 #X connect 24 0 0 0;
 #X restore 268 473 pd sendOSC;
-#N canvas 169 479 614 599 readsf~ 1;
+#N canvas 167 143 614 599 readsf~ 0;
 #X obj 355 66 inlet;
 #X obj 475 23 inlet;
 #X obj 261 87 ggee/getdir;
@@ -306,9 +306,9 @@
 -1 -1 2;
 #X text 182 109 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 8099 1;
+-1 -1 875 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 8048 1;
+-1 -1 900 1;
 #X text 182 126 serato face A;
 #X text 182 141 serato face B;
 #N canvas 951 275 767 805 analysis 0;
@@ -341,7 +341,7 @@
 #X obj 293 511 *;
 #X floatatom 168 522 5 0 0 0 - - -, f 5;
 #X obj 447 476 puremapping/stream_check;
-#X obj 447 550 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 447 550 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 336 96 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -459,7 +459,7 @@
 #X floatatom 124 301 5 0 0 0 - - -, f 5;
 #N canvas 0 554 1364 332 load 0;
 #X obj 273 48 route 9 10 11 12 25 26 27 28;
-#X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;

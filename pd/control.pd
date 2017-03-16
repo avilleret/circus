@@ -1,4 +1,4 @@
-#N canvas 825 80 520 662 10;
+#N canvas 560 145 520 662 10;
 #X declare -path abs -path bin;
 #X obj 61 652 loadbang;
 #X msg 61 674 \; pd dsp 1;
@@ -168,7 +168,7 @@
 #X connect 38 0 32 0;
 #X connect 39 0 32 0;
 #X restore 134 419 pd readsf~;
-#N canvas 275 113 1364 605 source 0;
+#N canvas 269 139 1364 605 source 0;
 #X obj 294 73 ggee/getdir;
 #X obj 294 50 loadbang;
 #X floatatom 313 194 5 0 0 0 - - -, f 5;
@@ -195,8 +195,6 @@
 #X obj 46 318 == 2;
 #X floatatom 412 208 5 0 0 0 - - -, f 5;
 #X floatatom 73 229 5 0 0 0 - - -, f 5;
-#X msg -26 100 symbol \$1/Serato2B_48kHz.wav;
-#X msg 294 100 symbol \$1/Serato2A_48kHz.wav;
 #X msg -5 247 index \$1;
 #X obj -26 290 sfread2~ 2;
 #X floatatom 755 297 5 0 0 0 - - -, f 5;
@@ -210,7 +208,6 @@
 #X obj 873 381 route ready;
 #X obj 873 403 sel 1;
 #X msg 873 425 play \, speed 0.5;
-#X obj 94 428 print;
 #X obj 294 290 sfread2~ 2;
 #X msg -26 153 open \$1 \, interp 1 \, index 0 \, loop 1 \, bang;
 #X msg 294 123 open \$1 \, interp 1 \, index 0 \, loop 1 \, bang;
@@ -247,9 +244,11 @@
 #X restore 313 218 pd getSR;
 #X obj 412 149 loadbang;
 #X msg 412 171 0.5;
-#X connect 0 0 25 0;
+#X msg 293 100 symbol \$1/Serato2A.wav;
+#X msg -26 100 symbol \$1/Serato2B.wav;
+#X connect 0 0 45 0;
 #X connect 1 0 0 0;
-#X connect 2 0 45 0;
+#X connect 2 0 42 0;
 #X connect 3 0 7 0;
 #X connect 3 1 8 0;
 #X connect 4 0 6 0;
@@ -265,61 +264,60 @@
 #X connect 13 0 4 1;
 #X connect 14 0 8 1;
 #X connect 14 0 7 1;
-#X connect 15 0 24 0;
+#X connect 15 0 46 0;
 #X connect 16 0 15 0;
-#X connect 17 0 44 0;
+#X connect 17 0 41 0;
 #X connect 18 0 6 0;
 #X connect 19 0 9 0;
 #X connect 20 0 15 0;
 #X connect 21 0 19 1;
 #X connect 21 0 18 1;
-#X connect 22 0 40 1;
-#X connect 23 0 27 1;
-#X connect 24 0 41 0;
-#X connect 24 0 44 1;
-#X connect 25 0 42 0;
-#X connect 25 0 45 1;
-#X connect 26 0 27 0;
-#X connect 27 0 18 0;
-#X connect 27 1 19 0;
-#X connect 27 2 39 0;
-#X connect 28 0 35 0;
-#X connect 31 0 30 1;
-#X connect 31 0 29 1;
-#X connect 32 0 34 0;
-#X connect 33 0 29 0;
-#X connect 33 1 30 0;
-#X connect 33 2 36 0;
-#X connect 34 0 33 0;
-#X connect 35 0 33 0;
-#X connect 36 0 37 0;
-#X connect 37 0 38 0;
-#X connect 38 0 33 0;
-#X connect 40 0 4 0;
-#X connect 40 1 5 0;
-#X connect 41 0 27 0;
+#X connect 22 0 37 1;
+#X connect 23 0 25 1;
+#X connect 24 0 25 0;
+#X connect 25 0 18 0;
+#X connect 25 1 19 0;
+#X connect 26 0 33 0;
+#X connect 29 0 28 1;
+#X connect 29 0 27 1;
+#X connect 30 0 32 0;
+#X connect 31 0 27 0;
+#X connect 31 1 28 0;
+#X connect 31 2 34 0;
+#X connect 32 0 31 0;
+#X connect 33 0 31 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 31 0;
+#X connect 37 0 4 0;
+#X connect 37 1 5 0;
+#X connect 38 0 25 0;
+#X connect 39 0 37 0;
+#X connect 40 0 37 0;
+#X connect 41 0 24 0;
 #X connect 42 0 40 0;
-#X connect 43 0 40 0;
-#X connect 44 0 26 0;
-#X connect 45 0 43 0;
-#X connect 46 0 47 0;
-#X connect 47 0 22 0;
-#X connect 47 0 23 0;
+#X connect 43 0 44 0;
+#X connect 44 0 22 0;
+#X connect 44 0 23 0;
+#X connect 45 0 39 0;
+#X connect 45 0 42 1;
+#X connect 46 0 38 0;
+#X connect 46 0 41 1;
 #X restore 163 189 pd source;
 #X obj 163 110 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
 -1 -1 2;
 #X text 182 109 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7754 1;
+-1 -1 8377 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7691 1;
+-1 -1 8327 1;
 #X text 182 126 serato face A;
 #X text 182 141 serato face B;
-#N canvas 299 86 767 625 analysis 0;
+#N canvas 969 207 767 805 analysis 1;
 #X floatatom 253 411 5 0 0 0 speed - -, f 5;
 #X obj 389 293 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 372 478 5 0 0 0 position - -, f 5;
+#X floatatom 372 458 5 0 0 0 position - -, f 5;
 #X msg 288 294 smoothing \$1;
 #X floatatom 289 273 5 0 0 0 - - -, f 5;
 #X obj 163 442 route float;
@@ -357,7 +355,7 @@
 #X obj 162 228 inlet~;
 #X obj 222 228 inlet~;
 #X obj 293 558 outlet;
-#X obj 372 558 outlet;
+#X obj 354 763 outlet;
 #X obj 463 504 loadbang;
 #X msg 463 526 0;
 #X obj 253 358 * 2;
@@ -369,7 +367,7 @@
 #X obj 545 245 realtime;
 #X obj 386 32 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 372 455 * 857;
+#X obj 372 435 * 857;
 #X obj 440 273 inlet;
 #X obj 588 437 outlet;
 #X floatatom 548 436 5 0 0 0 - - -, f 5;
@@ -382,9 +380,21 @@
 #X obj 549 414 puremapping/iir 100;
 #X msg 473 341 reset \$1;
 #X obj 472 319 f;
+#X floatatom 482 436 5 0 0 0 - - -, f 5;
+#X floatatom 563 307 5 0 0 0 - - -, f 5;
+#X obj 393 559 -;
+#X floatatom 393 581 5 0 0 0 - - -, f 5;
+#X obj 433 630 max;
+#X obj 433 652 f;
+#X floatatom 433 674 5 0 0 0 - - -, f 5;
+#X obj 393 599 abs;
+#X obj 393 698 > 10;
+#X msg 451 603 0;
+#X obj 372 511 t f f f;
+#X obj 354 724 spigot;
 #X connect 0 0 7 1;
 #X connect 1 0 40 2;
-#X connect 2 0 20 0;
+#X connect 2 0 54 0;
 #X connect 3 0 40 2;
 #X connect 4 0 3 0;
 #X connect 5 0 6 0;
@@ -407,6 +417,7 @@
 #X connect 24 0 25 0;
 #X connect 24 1 31 0;
 #X connect 24 1 9 0;
+#X connect 24 1 44 0;
 #X connect 25 0 40 2;
 #X connect 26 0 27 0;
 #X connect 27 0 28 0;
@@ -424,6 +435,7 @@
 #X connect 38 0 26 0;
 #X connect 39 0 41 0;
 #X connect 39 0 43 1;
+#X connect 39 0 45 0;
 #X connect 40 0 5 0;
 #X connect 40 1 23 0;
 #X connect 40 2 24 0;
@@ -431,14 +443,27 @@
 #X connect 41 0 33 0;
 #X connect 42 0 41 0;
 #X connect 43 0 42 0;
+#X connect 46 0 47 0;
+#X connect 47 0 51 0;
+#X connect 48 0 49 0;
+#X connect 49 0 48 1;
+#X connect 49 0 50 0;
+#X connect 51 0 48 0;
+#X connect 51 0 52 0;
+#X connect 52 0 55 1;
+#X connect 53 0 48 1;
+#X connect 54 0 55 0;
+#X connect 54 1 46 1;
+#X connect 54 2 46 0;
+#X connect 55 0 20 0;
 #X restore 164 260 pd analysis;
 #X floatatom 261 306 5 0 0 0 - - -, f 5;
 #X floatatom 124 301 5 0 0 0 - - -, f 5;
-#N canvas 1 376 1364 332 load 0;
+#N canvas 0 389 1364 332 load 0;
 #X obj 273 48 route 9 10 11 12 25 26 27 28;
 #X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 323 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -565,7 +590,7 @@
 #X connect 38 0 31 0;
 #X connect 39 0 31 0;
 #X restore 84 222 pd load;
-#N canvas 357 178 859 300 init 0;
+#N canvas 354 191 859 300 init 0;
 #X obj 131 85 declare -path abs -path bin;
 #X obj 64 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -581,7 +606,7 @@
 #X connect 4 0 3 1;
 #X restore 64 58 pd init;
 #X obj 260 226 nbx 5 14 -1e+37 1e+37 0 1 empty empty adjust 0 -8 0
-10 -262144 -1 -1 1530 256;
+10 -262144 -1 -1 671 256;
 #X floatatom 258 261 5 0 0 0 - - -, f 5;
 #N canvas 1 99 659 300 readme 0;
 #X text 143 53 Il faut que le nombre qui sort à droite de [pd analysis]

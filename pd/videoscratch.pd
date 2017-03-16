@@ -1,4 +1,4 @@
-#N canvas 641 93 715 662 10;
+#N canvas 632 93 715 948 10;
 #X obj 72 271 gemhead;
 #X obj 72 673 pix_film;
 #X obj 72 836 pix_texture;
@@ -36,7 +36,7 @@
 #X obj 477 690 spigot;
 #X msg 528 737 disconnect;
 #X obj 519 717 loadbang;
-#X obj 477 546 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 477 546 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 1 95 450 300 stream_check 0;
 #X obj 17 46 t b b;
@@ -71,8 +71,8 @@
 #X msg 94 91 dimen 1280 720 \, border 0 \, offset 1366 0 \, frame 60
 \, create \, 1;
 #X msg 90 208 PARTIE1A.mov;
-#X obj 13 20 delay 1000;
-#X msg 13 41 dimen 1280 720 \, border 1 \, offset 1366 0 \, frame 60
+#X obj 13 20 delay 2000;
+#X msg 14 40 dimen 1280 720 \, border 1 \, offset 1366 0 \, frame 60
 \, create \, 1;
 #X connect 0 0 26 0;
 #X connect 1 0 25 0;

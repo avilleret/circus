@@ -1,11 +1,11 @@
-#N canvas 864 107 355 708 10;
+#N canvas 862 107 355 708 10;
 #X obj 61 652 loadbang;
 #X msg 61 674 \; pd dsp 1;
 #X obj 28 299 env~;
 #X floatatom 28 341 5 0 0 0 - - -, f 5;
 #X obj 68 299 env~;
 #X floatatom 68 341 5 0 0 0 - - -, f 5;
-#N canvas 220 165 642 507 sendOSC 1;
+#N canvas 218 167 642 507 sendOSC 0;
 #X obj 221 170 osc/packOSC;
 #X obj 221 299 net/udpsend;
 #X msg 261 269 disconnect;
@@ -305,9 +305,9 @@
 -1 -1 1;
 #X text 182 109 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5109 1;
+-1 -1 5063 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5112 1;
+-1 -1 5059 1;
 #X text 182 126 serato face A;
 #X text 182 141 serato face B;
 #N canvas 570 108 767 625 analysis 0;
@@ -409,11 +409,11 @@
 #X restore 164 260 pd analysis;
 #X floatatom 282 296 5 0 0 0 - - -, f 5;
 #X floatatom 124 301 5 0 0 0 - - -, f 5;
-#N canvas 175 331 1024 332 load 1;
+#N canvas 173 333 1024 332 load 0;
 #X obj 273 48 route 9 10 11 12 25 26 27 28;
 #X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 323 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;

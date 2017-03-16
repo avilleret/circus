@@ -1,11 +1,12 @@
-#N canvas 862 107 355 708 10;
+#N canvas 857 147 355 708 10;
+#X declare -path abs -path bin;
 #X obj 61 652 loadbang;
 #X msg 61 674 \; pd dsp 1;
 #X obj 28 299 env~;
 #X floatatom 28 341 5 0 0 0 - - -, f 5;
 #X obj 68 299 env~;
 #X floatatom 68 341 5 0 0 0 - - -, f 5;
-#N canvas 218 167 642 507 sendOSC 0;
+#N canvas 215 180 642 507 sendOSC 0;
 #X obj 221 170 osc/packOSC;
 #X obj 221 299 net/udpsend;
 #X msg 261 269 disconnect;
@@ -14,7 +15,7 @@
 #X msg 253 244 connect 127.0.0.1 6667;
 #X msg 221 116 send /speed \$1;
 #X msg 338 116 send /position \$1;
-#X obj 221 361 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 221 361 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 338 91 inlet;
 #X obj 221 91 inlet;
@@ -305,9 +306,9 @@
 -1 -1 1;
 #X text 182 109 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5063 1;
+-1 -1 1023 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5059 1;
+-1 -1 912 1;
 #X text 182 126 serato face A;
 #X text 182 141 serato face B;
 #N canvas 570 108 767 625 analysis 0;
@@ -481,6 +482,14 @@
 #X connect 16 0 18 0;
 #X connect 18 0 17 0;
 #X restore 134 367 pd load;
+#N canvas 361 174 859 300 init 0;
+#X obj 131 85 declare -path abs -path bin;
+#X obj 64 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 64 158 selectAudioDevice USB_AUDIO_CODEC_(hardware) HDA_Intel_PCH_(hardware)
+, f 69;
+#X connect 1 0 2 0;
+#X restore 64 58 pd init;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 2 0 11 0;

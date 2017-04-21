@@ -1,4 +1,4 @@
-#N canvas 589 112 469 558 10;
+#N canvas 587 114 469 558 10;
 #X declare -path abs -path bin;
 #X obj 350 83 loadbang;
 #X msg 350 105 \; pd dsp 1;
@@ -333,12 +333,12 @@
 -1 0;
 #X text 182 79 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 8179 1;
+-1 -1 857 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 8121 1;
+-1 -1 879 1;
 #X text 182 96 serato face A;
 #X text 182 111 serato face B;
-#N canvas 51 102 953 485 analysis 0;
+#N canvas 54 206 953 485 analysis 0;
 #X floatatom 236 241 5 0 0 0 speed - -, f 5;
 #X floatatom 351 318 5 0 0 0 position - -, f 5;
 #X obj 143 302 route float;
@@ -365,7 +365,7 @@
 #X floatatom 143 362 5 0 0 0 - - -, f 5;
 #X obj 142 88 inlet~;
 #X obj 235 88 inlet~;
-#X obj 218 523 outlet;
+#X obj 250 593 outlet;
 #X obj 429 664 outlet;
 #X obj 236 218 * 2;
 #X obj 555 93 inlet;
@@ -433,6 +433,9 @@
 #X floatatom 568 505 5 0 0 0 - - -, f 5;
 #X obj 525 540 * 100;
 #X floatatom 267 454 5 0 0 0 - - -, f 5;
+#X obj 218 514 t f f;
+#X obj 278 544 sel 0;
+#X obj 320 567 f;
 #X connect 0 0 4 1;
 #X connect 1 0 25 0;
 #X connect 2 0 3 0;
@@ -478,14 +481,19 @@
 #X connect 36 0 33 0;
 #X connect 37 0 18 1;
 #X connect 38 0 39 1;
-#X connect 39 0 8 0;
+#X connect 39 0 46 0;
 #X connect 40 0 38 0;
 #X connect 40 0 45 0;
 #X connect 40 1 30 0;
+#X connect 40 1 48 1;
 #X connect 41 0 22 2;
 #X connect 42 0 41 0;
+#X connect 46 0 47 0;
+#X connect 46 1 8 0;
+#X connect 47 0 48 0;
+#X connect 48 0 9 0;
 #X restore 164 260 pd analysis;
-#N canvas 12 238 1351 362 load 1;
+#N canvas 122 208 1351 362 load 0;
 #X obj 273 48 route 9 10 11 12 25 26 27 28;
 #X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -499,7 +507,7 @@
 1;
 #X obj 413 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 441 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 441 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 473 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -661,7 +669,7 @@ la durée du vinyle.;
 #X text 277 285 Real stretch factor;
 #X text 313 211 Time stretch;
 #X obj 219 226 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 30 256;
+-262144 -1 -1 5 256;
 #X text 221 211 Offset;
 #X floatatom 201 353 5 0 0 0 - - -, f 5;
 #X floatatom 164 353 5 0 0 0 - - -, f 5;

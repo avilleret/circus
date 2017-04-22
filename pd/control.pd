@@ -1,4 +1,4 @@
-#N canvas 585 116 469 558 10;
+#N canvas 583 118 469 558 10;
 #X declare -path abs -path bin;
 #X obj 350 83 loadbang;
 #X msg 350 105 \; pd dsp 1;
@@ -15,7 +15,7 @@
 #X msg 253 244 connect 127.0.0.1 6667;
 #X msg 221 116 send /speed \$1;
 #X msg 338 116 send /position \$1;
-#X obj 221 361 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 221 361 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 338 91 inlet;
 #X obj 221 91 inlet;
@@ -333,9 +333,9 @@
 -1 0;
 #X text 182 79 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4959 1;
+-1 -1 812 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5996 1;
+-1 -1 841 1;
 #X text 182 96 serato face A;
 #X text 182 111 serato face B;
 #N canvas 50 210 953 485 analysis 0;
@@ -493,7 +493,7 @@
 #X connect 48 1 10 0;
 #X connect 48 2 20 0;
 #X restore 164 260 pd analysis;
-#N canvas 12 212 1351 362 load 0;
+#N canvas 314 327 1351 362 load 1;
 #X obj 273 48 route 9 10 11 12 25 26 27 28;
 #X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -503,11 +503,11 @@
 1;
 #X obj 353 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 383 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 383 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 413 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 441 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 441 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 473 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -555,17 +555,17 @@
 #X msg 243 175 PARTIE1A.wav;
 #X msg 457 178 Entracte.wav;
 #X msg 466 201 Entracte.mov;
-#X msg 567 178 PARTIE2A.wav;
 #X msg 576 201 PARTIE2A.mov;
-#X msg 674 179 PARTIE2B.wav;
 #X msg 683 202 PARTIE2B.mov;
 #X msg 102 198 PARTIE1A.mov;
 #X msg 252 199 partie1A;
 #X text 1075 205 face offset timestretch;
 #X msg 93 175 EntréePublic.wav;
-#X msg 789 176 SEXCORDE.wav;
 #X msg 1070 225 serato_2a 30 1;
 #X msg 1081 254 serato_2b 7 1;
+#X msg 674 179 Brouillon2B.wav;
+#X msg 567 178 Brouillon2A.wav;
+#X msg 789 176 DRAPEAUX.wav;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 0 2 3 0;
@@ -583,30 +583,30 @@
 #X connect 7 0 22 0;
 #X connect 8 0 24 0;
 #X connect 9 0 0 0;
-#X connect 11 0 40 0;
-#X connect 11 0 34 0;
 #X connect 11 0 37 0;
+#X connect 11 0 32 0;
+#X connect 11 0 35 0;
 #X connect 12 0 27 0;
-#X connect 12 0 35 0;
-#X connect 12 0 40 0;
+#X connect 12 0 33 0;
+#X connect 12 0 37 0;
 #X connect 14 0 13 0;
 #X connect 15 0 16 0;
 #X connect 15 0 17 0;
-#X connect 15 0 39 0;
+#X connect 15 0 36 0;
 #X connect 16 0 10 0;
 #X connect 17 0 14 0;
 #X connect 18 0 28 0;
 #X connect 18 0 29 0;
-#X connect 18 0 39 0;
+#X connect 18 0 36 0;
+#X connect 19 0 39 0;
 #X connect 19 0 30 0;
-#X connect 19 0 31 0;
-#X connect 19 0 40 0;
-#X connect 20 0 32 0;
-#X connect 20 0 33 0;
-#X connect 20 0 39 0;
-#X connect 22 0 38 0;
+#X connect 19 0 37 0;
+#X connect 20 0 38 0;
+#X connect 20 0 31 0;
+#X connect 20 0 36 0;
+#X connect 22 0 40 0;
 #X connect 22 0 23 0;
-#X connect 22 0 39 0;
+#X connect 22 0 36 0;
 #X connect 23 0 14 0;
 #X connect 24 0 25 0;
 #X connect 24 0 26 0;
@@ -615,16 +615,16 @@
 #X connect 27 0 10 0;
 #X connect 28 0 10 0;
 #X connect 29 0 14 0;
-#X connect 30 0 10 0;
+#X connect 30 0 14 0;
 #X connect 31 0 14 0;
-#X connect 32 0 10 0;
+#X connect 32 0 14 0;
 #X connect 33 0 14 0;
-#X connect 34 0 14 0;
-#X connect 35 0 14 0;
-#X connect 37 0 10 0;
+#X connect 35 0 10 0;
+#X connect 36 0 21 0;
+#X connect 37 0 21 0;
 #X connect 38 0 10 0;
-#X connect 39 0 21 0;
-#X connect 40 0 21 0;
+#X connect 39 0 10 0;
+#X connect 40 0 10 0;
 #X restore 85 192 pd load;
 #N canvas 354 191 859 300 init 0;
 #X obj 131 85 declare -path abs -path bin;

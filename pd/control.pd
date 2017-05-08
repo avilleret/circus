@@ -1,4 +1,4 @@
-#N canvas 890 158 469 558 10;
+#N canvas 884 184 469 558 10;
 #X declare -path abs -path bin;
 #X obj 350 83 loadbang;
 #X msg 350 105 \; pd dsp 1;
@@ -317,9 +317,9 @@
 -1 2;
 #X text 182 79 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7810 1;
+-1 -1 7556 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7771 1;
+-1 -1 7873 1;
 #X text 182 96 serato face A;
 #X text 182 111 serato face B;
 #N canvas 155 495 953 485 analysis 0;
@@ -477,7 +477,7 @@
 #X connect 48 1 10 0;
 #X connect 48 2 20 0;
 #X restore 164 260 pd analysis;
-#N canvas 0 386 1351 362 load 1;
+#N canvas 0 412 1351 362 load 0;
 #X obj 273 48 route 9 10 11 12 25 26 27 28;
 #X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -548,9 +548,9 @@
 #X msg 567 178 Brouillon2A.wav;
 #X msg 896 177 test.wav;
 #X msg 905 200 test;
-#X msg 789 176 test2.wav;
-#X msg 798 198 test2;
 #X msg 1076 184 serato_2b 15 1;
+#X msg 789 176 test3.wav;
+#X msg 798 198 test3;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 0 2 3 0;
@@ -589,12 +589,12 @@
 #X connect 20 0 35 0;
 #X connect 20 0 28 0;
 #X connect 20 0 33 0;
-#X connect 22 0 39 0;
 #X connect 22 0 40 0;
 #X connect 22 0 41 0;
+#X connect 22 0 39 0;
 #X connect 23 0 37 0;
 #X connect 23 0 38 0;
-#X connect 23 0 41 0;
+#X connect 23 0 39 0;
 #X connect 24 0 10 0;
 #X connect 25 0 10 0;
 #X connect 26 0 14 0;
@@ -609,9 +609,9 @@
 #X connect 36 0 10 0;
 #X connect 37 0 10 0;
 #X connect 38 0 14 0;
-#X connect 39 0 10 0;
-#X connect 40 0 14 0;
-#X connect 41 0 21 0;
+#X connect 39 0 21 0;
+#X connect 40 0 10 0;
+#X connect 41 0 14 0;
 #X restore 85 192 pd load;
 #N canvas 343 212 859 300 init 0;
 #X obj 131 85 declare -path abs -path bin;

@@ -1,4 +1,5 @@
 #!/bin/bash
+killall pd
 
 cd ${0%/*}/pd # change to Pd sub directory, relative to this script
 

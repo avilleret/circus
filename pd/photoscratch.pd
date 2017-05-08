@@ -1,5 +1,5 @@
-#N canvas 50 339 629 159 10;
-#N canvas 682 141 1218 903 cache-misere 1;
+#N canvas 111 330 629 159 10;
+#N canvas 601 177 1218 903 cache-misere 0;
 #X obj 117 567 gemhead;
 #X obj 117 902 pix_texture;
 #X obj 293 384 ggee/getdir;
@@ -122,7 +122,7 @@
 #X obj 684 345 line;
 #X obj 240 534 list append 0 10 10;
 #X obj 512 323 spigot 1;
-#X obj 560 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 560 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 196 687 mute;
 #X obj 196 365 t b a;
@@ -219,14 +219,22 @@
 0 \, frame 60 \, create \, 1;
 #X obj 512 364 f;
 #X msg 343 259 test3;
-#X floatatom 771 759 5 0 0 0 - - -, f 5;
-#X text 809 759 tick per microsecond;
+#X floatatom 771 789 5 0 0 0 - - -, f 5;
+#X text 809 789 tick per microsecond;
 #X obj 688 616 route ticks_per_quarternote microsec_per_quarternote
 ;
 #X obj 868 667 print microsec_per_quarternote;
 #X obj 803 681 / 1000;
 #X obj 803 703 / 1000;
 #X obj 771 737 / 0.5;
+#X obj 936 412 / 120;
+#X obj 707 215 unpack s 120;
+#X obj 771 759 * 1;
+#X floatatom 969 388 5 0 0 0 - - -, f 5;
+#X floatatom 936 434 5 0 0 0 - - -, f 5;
+#X obj 916 209;
+#X obj 916 231;
+#X obj 916 231;
 #X connect 0 0 13 0;
 #X connect 1 0 7 0;
 #X connect 2 0 11 1;
@@ -241,7 +249,7 @@
 #X connect 12 1 53 0;
 #X connect 12 2 20 0;
 #X connect 12 3 10 0;
-#X connect 12 4 56 0;
+#X connect 12 4 83 0;
 #X connect 13 0 23 0;
 #X connect 13 1 23 1;
 #X connect 14 0 1 0;
@@ -322,7 +330,15 @@
 #X connect 77 1 79 0;
 #X connect 79 0 80 0;
 #X connect 80 0 81 1;
-#X connect 81 0 75 0;
+#X connect 81 0 84 0;
+#X connect 82 0 84 1;
+#X connect 82 0 86 0;
+#X connect 83 0 56 0;
+#X connect 83 1 85 0;
+#X connect 84 0 75 0;
+#X connect 85 0 82 0;
+#X connect 87 0 88 0;
+#X connect 87 0 89 0;
 #X restore 281 10 pd cache-misere;
 #X text 115 53 Patch de chargement de photos en fonction d'un timecode
 ;

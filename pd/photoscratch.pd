@@ -1,5 +1,5 @@
-#N canvas 62 287 629 159 10;
-#N canvas 358 144 971 622 cache-misere 0;
+#N canvas 59 300 629 159 10;
+#N canvas 166 113 971 622 cache-misere 1;
 #X obj 117 567 gemhead;
 #X obj 117 902 pix_texture;
 #X obj 293 384 ggee/getdir;

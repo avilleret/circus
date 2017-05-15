@@ -1,4 +1,4 @@
-#N canvas 877 201 469 558 10;
+#N canvas 759 80 469 558 10;
 #X declare -path abs -path bin;
 #X obj 350 83 loadbang;
 #X msg 350 105 \; pd dsp 1;
@@ -319,9 +319,9 @@
 -1 2;
 #X text 182 79 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7724 1;
+-1 -1 890 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7678 1;
+-1 -1 901 1;
 #X text 182 96 serato face A;
 #X text 182 111 serato face B;
 #N canvas 155 495 953 485 analysis 0;
@@ -479,7 +479,7 @@
 #X connect 48 1 10 0;
 #X connect 48 2 20 0;
 #X restore 164 260 pd analysis;
-#N canvas 10 148 1351 619 load 1;
+#N canvas -107 293 1351 619 load 0;
 #X obj 273 48 route 9 10 11 12 25 26 27 28;
 #X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -493,9 +493,9 @@
 1;
 #X obj 413 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 441 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 441 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 473 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 473 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 0 93 692 503 notein 0;
 #X obj 274 39 notein;
@@ -694,4 +694,5 @@ la durée du vinyle.;
 #X connect 21 0 8 1;
 #X connect 22 0 8 2;
 #X connect 29 0 15 3;
+#X connect 31 0 7 2;
 #X connect 32 0 7 1;

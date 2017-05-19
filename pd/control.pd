@@ -1,4 +1,4 @@
-#N canvas 753 86 469 558 10;
+#N canvas 751 88 469 558 10;
 #X declare -path abs -path bin;
 #X obj 350 83 loadbang;
 #X msg 350 105 \; pd dsp 1;
@@ -319,9 +319,9 @@
 -1 2;
 #X text 182 79 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 874 1;
+-1 -1 831 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 895 1;
+-1 -1 883 1;
 #X text 182 96 serato face A;
 #X text 182 111 serato face B;
 #N canvas 167 80 953 485 analysis 0;
@@ -479,11 +479,11 @@
 #X connect 48 1 10 0;
 #X connect 48 2 20 0;
 #X restore 164 260 pd analysis;
-#N canvas 14 80 1351 619 load 1;
+#N canvas 12 82 1351 619 load 1;
 #X obj 273 48 route 9 10 11 12 25 26 27 28;
 #X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 323 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -495,7 +495,7 @@
 1;
 #X obj 441 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 473 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 473 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 0 93 692 503 notein 0;
 #X obj 274 39 notein;
@@ -542,8 +542,6 @@
 #X msg 102 198 PARTIE1A.mov;
 #X msg 252 199 partie1A;
 #X text 1129 215 face offset timestretch;
-#X msg 1124 235 serato_2a 30 1;
-#X msg 1135 264 serato_2b 7 1;
 #X msg 1130 194 serato_2b 15 1;
 #X msg 798 198 test3 120;
 #X msg 905 200 test3-108BPM 108;
@@ -554,9 +552,11 @@
 #X msg 586 352 120;
 #X msg 567 178 PARTIE2A.wav;
 #X msg 674 179 PARTIE2B.wav;
-#X msg 93 175 EntréePublic.wav;
-#X msg 789 176 PANCARTES.wav;
 #X msg 896 177 SORTIE.wav;
+#X msg 93 175 PANCARTES.wav;
+#X msg 789 176 SORTIE.wav;
+#X msg 1135 264 serato_2b 10 1;
+#X msg 1124 235 serato_2a 30 1.4;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 0 2 3 0;
@@ -574,55 +574,55 @@
 #X connect 7 0 21 0;
 #X connect 8 0 22 0;
 #X connect 9 0 0 0;
-#X connect 11 0 32 0;
+#X connect 11 0 44 0;
 #X connect 11 0 28 0;
-#X connect 11 0 43 0;
+#X connect 11 0 42 0;
 #X connect 12 0 23 0;
 #X connect 12 0 29 0;
-#X connect 12 0 32 0;
+#X connect 12 0 45 0;
 #X connect 14 0 15 0;
 #X connect 14 0 16 0;
-#X connect 14 0 31 0;
+#X connect 14 0 44 0;
 #X connect 15 0 10 0;
-#X connect 16 0 39 0;
+#X connect 16 0 37 0;
 #X connect 17 0 24 0;
 #X connect 17 0 25 0;
-#X connect 17 0 31 0;
-#X connect 18 0 41 0;
+#X connect 17 0 45 0;
+#X connect 18 0 39 0;
 #X connect 18 0 26 0;
-#X connect 18 0 32 0;
-#X connect 19 0 42 0;
+#X connect 18 0 45 0;
+#X connect 19 0 40 0;
 #X connect 19 0 27 0;
-#X connect 19 0 31 0;
-#X connect 21 0 44 0;
-#X connect 21 0 34 0;
-#X connect 21 0 31 0;
-#X connect 22 0 45 0;
-#X connect 22 0 35 0;
-#X connect 22 0 32 0;
+#X connect 19 0 44 0;
+#X connect 21 0 43 0;
+#X connect 21 0 32 0;
+#X connect 21 0 45 0;
+#X connect 22 0 41 0;
+#X connect 22 0 33 0;
+#X connect 22 0 44 0;
 #X connect 23 0 10 0;
 #X connect 24 0 10 0;
-#X connect 25 0 39 0;
-#X connect 26 0 39 0;
-#X connect 27 0 39 0;
-#X connect 28 0 39 0;
-#X connect 29 0 39 0;
+#X connect 25 0 37 0;
+#X connect 26 0 37 0;
+#X connect 27 0 37 0;
+#X connect 28 0 37 0;
+#X connect 29 0 37 0;
 #X connect 31 0 20 0;
-#X connect 32 0 20 0;
-#X connect 33 0 20 0;
-#X connect 34 0 39 0;
-#X connect 35 0 39 0;
-#X connect 36 0 13 0;
-#X connect 37 0 38 0;
-#X connect 38 0 40 0;
-#X connect 39 0 36 0;
-#X connect 39 1 37 0;
-#X connect 40 0 36 1;
+#X connect 32 0 37 0;
+#X connect 33 0 37 0;
+#X connect 34 0 13 0;
+#X connect 35 0 36 0;
+#X connect 36 0 38 0;
+#X connect 37 0 34 0;
+#X connect 37 1 35 0;
+#X connect 38 0 34 1;
+#X connect 39 0 10 0;
+#X connect 40 0 10 0;
 #X connect 41 0 10 0;
 #X connect 42 0 10 0;
 #X connect 43 0 10 0;
-#X connect 44 0 10 0;
-#X connect 45 0 10 0;
+#X connect 44 0 20 0;
+#X connect 45 0 20 0;
 #X restore 85 192 pd load;
 #N canvas 340 225 859 300 init 0;
 #X obj 131 85 declare -path abs -path bin;
@@ -640,7 +640,7 @@
 #X connect 4 0 3 1;
 #X restore 64 58 pd init;
 #X obj 311 226 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 1 256;
+-262144 -1 -1 1.4 256;
 #X floatatom 238 285 5 0 0 0 - - -, f 5;
 #N canvas 0 125 659 456 readme 0;
 #X text 108 21 La valeur de timecode n'est utilisé que lors d'un saut.
@@ -667,7 +667,7 @@ la durée du vinyle.;
 #X text 277 285 Real stretch factor;
 #X text 313 211 Time stretch;
 #X obj 219 226 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 7 256;
+-262144 -1 -1 30 256;
 #X text 221 211 Offset;
 #X floatatom 201 353 5 0 0 0 - - -, f 5;
 #X floatatom 164 353 5 0 0 0 - - -, f 5;

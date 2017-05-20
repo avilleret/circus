@@ -1,4 +1,4 @@
-#N canvas 751 88 469 558 10;
+#N canvas 749 90 469 558 10;
 #X declare -path abs -path bin;
 #X obj 350 83 loadbang;
 #X msg 350 105 \; pd dsp 1;
@@ -319,9 +319,9 @@
 -1 2;
 #X text 182 79 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 831 1;
+-1 -1 982 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 883 1;
+-1 -1 872 1;
 #X text 182 96 serato face A;
 #X text 182 111 serato face B;
 #N canvas 167 80 953 485 analysis 0;
@@ -479,11 +479,11 @@
 #X connect 48 1 10 0;
 #X connect 48 2 20 0;
 #X restore 164 260 pd analysis;
-#N canvas 12 82 1351 619 load 1;
+#N canvas 10 84 1351 619 load 1;
 #X obj 273 48 route 9 10 11 12 25 26 27 28;
 #X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 323 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -556,7 +556,7 @@
 #X msg 93 175 PANCARTES.wav;
 #X msg 789 176 SORTIE.wav;
 #X msg 1135 264 serato_2b 10 1;
-#X msg 1124 235 serato_2a 30 1.4;
+#X msg 1124 235 serato_2a 46 1.4;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 0 2 3 0;

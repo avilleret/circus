@@ -1,5 +1,5 @@
-#N canvas 101 340 629 159 10;
-#N canvas 114 115 1218 554 cache-misere 1;
+#N canvas 99 342 629 159 10;
+#N canvas 112 117 1218 554 cache-misere 1;
 #X obj 117 567 gemhead;
 #X obj 117 902 pix_texture;
 #X obj 293 384 ggee/getdir;
@@ -27,7 +27,7 @@
 #X obj 224 370 spigot;
 #X msg 275 417 disconnect;
 #X obj 266 397 loadbang;
-#X obj 224 226 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 224 226 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #N canvas 1 95 450 300 stream_check 0;
 #X obj 17 46 t b b;
@@ -121,7 +121,7 @@
 #X obj 684 345 line;
 #X obj 240 534 list append 0 10 10;
 #X obj 512 323 spigot 1;
-#X obj 565 302 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 565 302 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 196 687 mute;
 #N canvas 1 108 413 618 passall 0;

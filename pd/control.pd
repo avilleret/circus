@@ -1,4 +1,4 @@
-#N canvas 472 159 469 558 10;
+#N canvas 470 161 469 558 10;
 #X declare -path abs -path bin;
 #X obj 350 83 loadbang;
 #X msg 350 105 \; pd dsp 1;
@@ -65,7 +65,7 @@
 #X connect 24 0 0 0;
 #X connect 24 0 25 0;
 #X restore 108 495 pd sendOSC;
-#N canvas 12 80 1351 687 readsf~ 0;
+#N canvas 10 80 1351 687 readsf~ 0;
 #X obj 191 87 ggee/getdir;
 #X obj 159 29 loadbang;
 #N canvas 0 268 450 435 getSR 0;
@@ -319,12 +319,12 @@
 #X connect 44 2 34 0;
 #X restore 163 189 pd source;
 #X obj 163 80 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
--1 2;
+-1 1;
 #X text 182 79 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7828 1;
+-1 -1 7816 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7779 1;
+-1 -1 7787 1;
 #X text 182 96 serato face A;
 #X text 182 111 serato face B;
 #N canvas 167 80 953 485 analysis 0;
@@ -482,13 +482,13 @@
 #X connect 48 1 10 0;
 #X connect 48 2 20 0;
 #X restore 164 260 pd analysis;
-#N canvas 363 224 858 433 load 1;
+#N canvas 361 226 858 433 load 1;
 #X obj 273 48 route 9 10 11 12 25 26 27 28;
 #X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 355 98 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 355 98 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 452 109 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -644,7 +644,7 @@
 #X connect 4 0 3 1;
 #X restore 64 58 pd init;
 #X obj 311 226 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 1.4 256;
+-262144 -1 -1 1 256;
 #X floatatom 238 285 5 0 0 0 - - -, f 5;
 #N canvas 0 125 659 456 readme 0;
 #X text 108 21 La valeur de timecode n'est utilisé que lors d'un saut.
@@ -671,18 +671,20 @@ la durée du vinyle.;
 #X text 277 285 Real stretch factor;
 #X text 313 211 Time stretch;
 #X obj 219 226 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 46 256;
+-262144 -1 -1 10 256;
 #X text 221 211 Offset;
 #X floatatom 201 353 5 0 0 0 - - -, f 5;
 #X floatatom 164 353 5 0 0 0 - - -, f 5;
-#X obj 287 365 env~;
-#X floatatom 287 387 5 0 0 0 - - -, f 5;
-#X obj 327 365 env~;
-#X floatatom 327 387 5 0 0 0 - - -, f 5;
-#X obj 288 409 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7578 1;
-#X obj 328 409 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7772 1;
+#X obj 266 316 env~;
+#X floatatom 266 338 5 0 0 0 - - -, f 5;
+#X obj 306 316 env~;
+#X floatatom 306 338 5 0 0 0 - - -, f 5;
+#X obj 267 360 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 8022 1;
+#X obj 307 360 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 8074 1;
+#X floatatom 359 532 5 0 0 0 - - -, f 5;
+#X text 62 531 position en seconde dans le fichier audio, f 42;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 2 0 11 0;
@@ -691,6 +693,7 @@ la durée du vinyle.;
 #X connect 7 0 33 0;
 #X connect 7 1 35 0;
 #X connect 7 2 6 2;
+#X connect 7 2 39 0;
 #X connect 8 0 2 0;
 #X connect 8 0 15 0;
 #X connect 8 1 4 0;

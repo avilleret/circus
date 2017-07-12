@@ -1,0 +1,9 @@
+[submodule "ofApp/ofxOMXPlayer"]
+	path = ofApp/ofxOMXPlayer
+	url = https://github.com/avilleret/ofxOMXPlayer.git
+[submodule "ofApp/ofxGstVideoSyncPlayer"]
+	path = ofApp/ofxGstVideoSyncPlayer
+	url = https://github.com/PetrosKataras/ofxGstVideoSyncPlayer.git
+[submodule "pd/mrpeach"]
+	path = pd/mrpeach
+	url = https://github.com/avilleret/mrpeach.git

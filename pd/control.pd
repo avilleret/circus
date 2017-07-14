@@ -1,4 +1,4 @@
-#N canvas 251 343 469 558 10;
+#N canvas 249 209 469 558 10;
 #X declare -path abs -path bin;
 #X obj 350 83 loadbang;
 #X msg 350 105 \; pd dsp 1;
@@ -331,12 +331,12 @@
 -1 1;
 #X text 182 79 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7815 1;
+-1 -1 1137 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7795 1;
+-1 -1 1344 1;
 #X text 182 96 serato face A;
 #X text 182 111 serato face B;
-#N canvas 857 233 953 843 analysis 0;
+#N canvas 185 97 953 708 analysis 0;
 #X floatatom 236 241 5 0 0 0 speed - -, f 5;
 #X floatatom 351 318 5 0 0 0 position - -, f 5;
 #X obj 143 302 route float;
@@ -405,7 +405,7 @@
 #X connect 13 0 8 0;
 #X restore 689 219 pd compute_second_duration;
 #X obj 329 91 unpack s f f;
-#X obj 351 351 -;
+#X obj 351 381 -;
 #X text 374 68 [vinyl_type offset timestretch(;
 #X msg 650 138 set \$1;
 #X obj 650 160 outlet;
@@ -419,7 +419,7 @@
 #X obj 329 128 symbol;
 #X obj 218 604 t f f;
 #X obj 320 588 f, f 7;
-#N canvas 0 209 450 338 check 0;
+#N canvas 1 213 450 338 check 0;
 #N canvas 0 151 450 300 stream_check 0;
 #X obj 71 79 t b b;
 #X msg 71 127 1;
@@ -458,7 +458,7 @@
 #X obj 17 25 inlet;
 #X obj 83 25 inlet;
 #X obj 76 317 outlet;
-#X obj 115 153 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 115 153 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 108 224 sel 1;
 #X obj 76 198 t f f;
@@ -479,8 +479,8 @@
 #X floatatom 218 641 5 0 0 0 - - -, f 5;
 #X obj 320 544 change;
 #X obj 320 566 sel 1;
-#X obj 547 417 inlet feedback;
-#X floatatom 600 446 5 0 0 0 - - -, f 5;
+#X obj 549 427 inlet feedback;
+#X floatatom 602 456 5 0 0 0 - - -, f 5;
 #N canvas 1360 629 450 377 compare_tc 0;
 #X obj 175 106 -;
 #X floatatom 175 128 5 0 0 0 - - -, f 5;
@@ -512,28 +512,38 @@
 #X connect 11 0 13 0;
 #X connect 13 0 2 0;
 #X connect 13 0 3 0;
-#X restore 461 471 pd compare_tc;
-#X floatatom 461 523 5 0 0 0 - - -, f 5;
+#X restore 461 511 pd compare_tc;
+#X floatatom 461 563 5 0 0 0 - - -, f 5;
 #X floatatom 339 618 5 0 0 0 - - -, f 5;
 #X obj 262 575 change;
 #X obj 262 597 sel 1;
 #X msg 262 619 0;
-#X floatatom 589 521 5 0 0 0 delta - -, f 5;
+#X floatatom 589 561 5 0 0 0 delta - -, f 5;
 #X obj 218 472 t f f;
-#X obj 183 509 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 183 509 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 351 373 moses;
-#X obj 351 412 t f f b;
+#X obj 351 432 t f f b;
 #X floatatom 330 466 5 0 0 0 - - -, f 5;
 #X obj 143 193 vinylcontrol~ serato_2a 10, f 27;
+#X obj 351 341 t f f;
+#X obj 351 403 moses, f 9;
+#X obj 409 465 spigot;
+#X obj 479 475 spigot;
+#X obj 459 425 == 0;
+#X obj 449 395 < 1397;
+#X msg 448 320 1397;
+#X text 482 319 face A;
+#X msg 527 340 1301;
+#X text 561 339 face B;
+#X obj 448 294 sel serato_2a serato_2b;
 #X connect 0 0 4 1;
-#X connect 1 0 20 0;
+#X connect 1 0 52 0;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
 #X connect 3 0 34 0;
 #X connect 4 0 29 0;
-#X connect 6 0 52 0;
-#X connect 7 0 52 1;
+#X connect 6 0 51 0;
+#X connect 7 0 51 1;
 #X connect 10 0 0 0;
 #X connect 11 0 17 0;
 #X connect 14 0 16 1;
@@ -549,7 +559,7 @@
 #X connect 19 1 25 0;
 #X connect 19 2 17 0;
 #X connect 19 2 22 0;
-#X connect 20 0 49 0;
+#X connect 20 0 53 0;
 #X connect 22 0 23 0;
 #X connect 24 0 20 1;
 #X connect 25 0 26 0;
@@ -557,8 +567,9 @@
 #X connect 28 0 29 1;
 #X connect 28 0 43 0;
 #X connect 29 0 32 0;
-#X connect 30 0 52 2;
+#X connect 30 0 51 2;
 #X connect 31 0 30 0;
+#X connect 31 0 62 0;
 #X connect 32 0 35 0;
 #X connect 32 1 8 0;
 #X connect 33 0 9 0;
@@ -568,6 +579,7 @@
 #X connect 37 0 33 0;
 #X connect 38 0 39 0;
 #X connect 38 0 40 1;
+#X connect 38 0 55 0;
 #X connect 40 0 41 0;
 #X connect 40 0 33 1;
 #X connect 40 1 46 0;
@@ -577,16 +589,27 @@
 #X connect 47 0 4 0;
 #X connect 47 0 48 0;
 #X connect 47 1 36 0;
-#X connect 49 1 50 0;
-#X connect 50 0 28 0;
-#X connect 50 0 51 0;
-#X connect 50 1 40 0;
-#X connect 50 2 34 1;
-#X connect 52 0 2 0;
-#X connect 52 1 10 0;
-#X connect 52 2 16 0;
+#X connect 49 0 28 0;
+#X connect 49 0 50 0;
+#X connect 49 1 54 0;
+#X connect 49 2 34 1;
+#X connect 51 0 2 0;
+#X connect 51 1 10 0;
+#X connect 51 2 16 0;
+#X connect 52 0 20 0;
+#X connect 52 1 57 0;
+#X connect 53 1 49 0;
+#X connect 54 0 40 0;
+#X connect 55 0 40 0;
+#X connect 56 0 55 1;
+#X connect 57 0 54 1;
+#X connect 57 0 56 0;
+#X connect 58 0 57 1;
+#X connect 60 0 57 1;
+#X connect 62 0 58 0;
+#X connect 62 1 60 0;
 #X restore 164 260 pd analysis;
-#N canvas 260 244 858 433 load 1;
+#N canvas 258 246 858 433 load 1;
 #X obj 273 48 route 9 10 11 12 25 26 27 28;
 #X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -787,9 +810,9 @@ la durée du vinyle.;
 #X obj 306 316 env~;
 #X floatatom 306 338 5 0 0 0 - - -, f 5;
 #X obj 267 360 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6192 1;
+-1 -1 0 1;
 #X obj 307 360 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6192 1;
+-1 -1 0 1;
 #X floatatom 359 532 5 0 0 0 - - -, f 5;
 #X text 62 531 position en seconde dans le fichier audio, f 42;
 #X connect 0 0 1 0;

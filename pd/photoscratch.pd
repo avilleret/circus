@@ -1,5 +1,5 @@
-#N canvas 99 400 629 159 10;
-#N canvas 123 562 1218 554 cache-misere 1;
+#N canvas 95 404 629 159 10;
+#N canvas 119 213 1218 554 cache-misere 0;
 #X obj 117 567 gemhead;
 #X obj 117 902 pix_texture;
 #X obj 293 384 ggee/getdir;
@@ -355,6 +355,6 @@
 #X connect 93 0 18 0;
 #X connect 94 0 21 0;
 #X connect 95 0 36 0;
-#X restore 281 10 pd cache-misere;
-#X text 115 53 Patch de chargement de photos en fonction d'un timecode
+#X restore 281 70 pd cache-misere;
+#X text 115 113 Patch de chargement de photos en fonction d'un timecode
 ;

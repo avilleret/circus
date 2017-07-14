@@ -1,4 +1,4 @@
-#N canvas 715 853 661 174 10;
+#N canvas 69 439 661 191 10;
 #N canvas 448 258 1218 655 cache-misere 0;
 #X obj 117 567 gemhead;
 #X obj 117 902 pix_texture;
@@ -27,7 +27,7 @@
 #X obj 224 370 spigot;
 #X msg 275 417 disconnect;
 #X obj 266 397 loadbang;
-#X obj 224 226 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 224 226 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 1 95 450 300 stream_check 0;
 #X obj 17 46 t b b;
@@ -396,24 +396,28 @@
 #X connect 107 0 105 0;
 #X connect 108 0 106 1;
 #X connect 108 0 106 2;
-#X restore 188 102 pd cache-misere;
-#X text 115 123 Patch de chargement de photos en fonction d'un timecode
+#X restore 188 122 pd cache-misere;
+#X text 115 143 Patch de chargement de photos en fonction d'un timecode
 ;
-#X obj 81 7 bng 15 250 50 0 empty empty load_image_manually 17 7 0
+#X obj 81 27 bng 15 250 50 0 empty empty load_image_manually 17 7 0
 10 -262144 -1 -1;
-#X msg 225 10 EntréePublic.jpg;
-#X msg 240 50 partie1A/10/10_10.jpg;
-#X msg 234 30 partie1B/46/46_1.jpg;
-#X obj 416 25 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X msg 225 30 EntréePublic.jpg;
+#X msg 240 70 partie1A/10/10_10.jpg;
+#X msg 234 50 partie1B/46/46_1.jpg;
+#X obj 416 45 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 476 25 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 -0.83 256;
-#X obj 416 74 pack 0 0;
-#X obj 476 44 t b f;
-#X obj 416 97 s trans;
-#X obj 516 97 s scale;
-#X obj 516 75 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 476 45 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 1 256;
+#X obj 416 94 pack 0 0;
+#X obj 476 64 t b f;
+#X obj 416 117 s trans;
+#X obj 536 117 s scale;
+#X obj 536 95 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 1.16 256;
+#X text 536 76 Zoom;
+#X text 422 13 Position;
+#X text 414 27 Horiz.;
+#X text 474 27 Vert.;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
 #X connect 4 0 0 0;

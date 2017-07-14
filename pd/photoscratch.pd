@@ -1,5 +1,5 @@
-#N canvas 95 404 629 159 10;
-#N canvas 119 213 1218 554 cache-misere 0;
+#N canvas 82 622 629 159 10;
+#N canvas 409 447 1218 554 cache-misere 0;
 #X obj 117 567 gemhead;
 #X obj 117 902 pix_texture;
 #X obj 293 384 ggee/getdir;
@@ -241,6 +241,26 @@
 #X msg 417 472 \$1 28 28;
 #X floatatom 823 529 5 0 0 1 position_(tick) - -, f 5;
 #X msg 562 444 1;
+#X obj 30 378 inlet;
+#X obj 30 508 openpanel;
+#X msg 97 539 open \$1;
+#X obj 30 400 route bang;
+#N canvas 0 93 450 300 relativepath 0;
+#X obj 168 106 ggee/getdir;
+#X obj 115 129 pack s s;
+#X msg 115 152 symbol \$2/../image/\$1;
+#X obj 168 85 loadbang;
+#X obj 115 67 inlet;
+#X obj 115 174 outlet;
+#X connect 0 0 1 1;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X restore 100 508 pd relativepath;
+#X obj 30 424 ggee/getdir;
+#X obj 30 468 symbol;
+#X msg 30 446 \$1/../images;
 #X connect 0 0 13 0;
 #X connect 1 0 7 0;
 #X connect 2 0 11 1;
@@ -355,6 +375,24 @@
 #X connect 93 0 18 0;
 #X connect 94 0 21 0;
 #X connect 95 0 36 0;
-#X restore 281 70 pd cache-misere;
-#X text 115 113 Patch de chargement de photos en fonction d'un timecode
+#X connect 96 0 99 0;
+#X connect 97 0 98 0;
+#X connect 98 0 13 0;
+#X connect 99 0 101 0;
+#X connect 99 1 100 0;
+#X connect 100 0 98 0;
+#X connect 101 0 103 0;
+#X connect 102 0 97 0;
+#X connect 103 0 102 0;
+#X restore 266 106 pd cache-misere;
+#X text 115 123 Patch de chargement de photos en fonction d'un timecode
 ;
+#X obj 266 20 bng 15 250 50 0 empty empty load_image_manually 17 7
+0 10 -262144 -1 -1;
+#X msg 325 43 EntréePublic.jpg;
+#X msg 334 63 Entracte.jpg;
+#X msg 340 83 partie1A/10/10_10.jpg;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;

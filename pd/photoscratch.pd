@@ -1,6 +1,6 @@
 #N canvas 148 457 661 191 10;
-#N canvas 89 112 1218 655 cache-misere 0;
-#X obj 117 567 gemhead;
+#N canvas 783 204 1218 655 cache-misere 1;
+#X obj 117 517 gemhead;
 #X obj 117 902 pix_texture;
 #X obj 293 384 ggee/getdir;
 #X obj 293 365 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -26,7 +26,7 @@
 #X obj 224 370 spigot;
 #X msg 275 417 disconnect;
 #X obj 266 397 loadbang;
-#X obj 224 226 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 224 226 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #N canvas 1 95 450 300 stream_check 0;
 #X obj 17 46 t b b;
@@ -191,7 +191,7 @@
 #X text 672 804 enlève le contrôleur 127 qui traine;
 #X msg 684 298 0 \, 60 60000;
 #X msg 782 305 stop;
-#N canvas 1 82 450 300 automute 0;
+#N canvas 1 93 450 300 automute 0;
 #X obj 168 87 t f f;
 #X obj 180 122 -;
 #X obj 180 144 abs;
@@ -236,10 +236,10 @@
 #X msg 417 472 \$1 28 28;
 #X floatatom 823 529 5 0 0 1 position_(tick) - -, f 5;
 #X msg 562 444 1;
-#X obj 30 378 inlet;
-#X obj 30 508 openpanel;
-#X msg 97 539 open \$1;
-#X obj 30 400 route bang;
+#X obj 30 328 inlet;
+#X obj 30 458 openpanel;
+#X msg 97 489 open \$1;
+#X obj 30 350 route bang;
 #N canvas 0 93 450 300 relativepath 0;
 #X obj 168 106 ggee/getdir;
 #X obj 115 129 pack s s;
@@ -252,10 +252,10 @@
 #X connect 2 0 5 0;
 #X connect 3 0 0 0;
 #X connect 4 0 1 0;
-#X restore 100 508 pd relativepath;
-#X obj 30 424 ggee/getdir;
-#X obj 30 468 symbol;
-#X msg 30 446 \$1/../images;
+#X restore 100 458 pd relativepath;
+#X obj 30 374 ggee/getdir;
+#X obj 30 418 symbol;
+#X msg 30 396 \$1/../images;
 #X msg 94 109 dimen 1280 800 \, border 1 \, offset 1366 0 \, frame
 60 \, create \, 1;
 #X obj 117 851 translateXYZ;
@@ -274,7 +274,26 @@
 #X obj 343 633 sel 0;
 #X obj 236 607 print;
 #X msg 430 630 45 0 \, 43 64;
-#X connect 0 0 13 0;
+#X obj 117 609 spigot 1;
+#N canvas 0 93 450 300 streamcheck 0;
+#X obj 130 54 inlet;
+#X obj 130 76 t b b;
+#X msg 162 113 1;
+#X obj 130 151 delay 2000;
+#X obj 162 210 outlet;
+#X msg 130 173 0;
+#X obj 206 62 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;
+#X connect 6 0 3 1;
+#X restore 71 576 pd streamcheck;
+#X obj 140 551 nbx 5 14 -1e+37 1e+37 0 1 empty empty timeout 0 -8 0
+10 -262144 -1 -1 2000 256;
+#X connect 0 0 117 0;
 #X connect 1 0 7 0;
 #X connect 2 0 11 1;
 #X connect 3 0 2 0;
@@ -355,6 +374,7 @@
 #X connect 66 0 55 0;
 #X connect 67 0 65 0;
 #X connect 67 0 15 0;
+#X connect 67 0 118 0;
 #X connect 68 0 11 0;
 #X connect 69 0 15 1;
 #X connect 71 0 24 0;
@@ -414,6 +434,9 @@
 #X connect 113 0 112 1;
 #X connect 114 0 52 0;
 #X connect 116 0 27 0;
+#X connect 117 0 13 0;
+#X connect 118 0 117 1;
+#X connect 119 0 118 1;
 #X restore 188 122 pd cache-misere;
 #X text 115 143 Patch de chargement de photos en fonction d'un timecode
 ;

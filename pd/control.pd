@@ -1,4 +1,4 @@
-#N canvas 249 209 469 558 10;
+#N canvas 494 444 469 558 10;
 #X declare -path abs -path bin;
 #X obj 350 83 loadbang;
 #X msg 350 105 \; pd dsp 1;
@@ -328,15 +328,15 @@
 #X connect 44 1 12 0;
 #X restore 163 189 pd source;
 #X obj 163 80 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144 -1
--1 1;
+-1 2;
 #X text 182 79 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1137 1;
+-1 -1 5442 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1344 1;
+-1 -1 6950 1;
 #X text 182 96 serato face A;
 #X text 182 111 serato face B;
-#N canvas 185 97 953 708 analysis 0;
+#N canvas 883 289 953 708 analysis 0;
 #X floatatom 236 241 5 0 0 0 speed - -, f 5;
 #X floatatom 351 318 5 0 0 0 position - -, f 5;
 #X obj 143 302 route float;
@@ -359,12 +359,12 @@
 #X connect 6 0 1 0;
 #X connect 7 0 3 0;
 #X restore 143 328 pd speedlimit;
-#X obj 218 516 *;
+#X obj 218 596 *;
 #X floatatom 143 362 5 0 0 0 - - -, f 5;
 #X obj 142 88 inlet~;
 #X obj 235 88 inlet~;
-#X obj 250 683 outlet;
-#X obj 320 683 outlet;
+#X obj 250 763 outlet;
+#X obj 320 823 outlet;
 #X obj 236 218 * 2;
 #X obj 555 93 inlet;
 #X obj 689 244 outlet;
@@ -413,12 +413,12 @@
 #X msg 469 141 set \$1;
 #X obj 469 163 outlet;
 #X obj 390 183 inlet;
-#X obj 236 538 > 0;
-#X obj 218 570 *;
+#X obj 236 618 > 0;
+#X obj 218 650 *;
 #X msg 329 152 vinyl \$1;
 #X obj 329 128 symbol;
-#X obj 218 604 t f f;
-#X obj 320 588 f, f 7;
+#X obj 218 684 t f f;
+#X obj 320 728 f, f 7;
 #N canvas 1 213 450 338 check 0;
 #N canvas 0 151 450 300 stream_check 0;
 #X obj 71 79 t b b;
@@ -475,12 +475,12 @@
 #X connect 9 0 3 0;
 #X connect 10 0 7 0;
 #X connect 10 1 9 0;
-#X restore 218 450 pd check;
-#X floatatom 218 641 5 0 0 0 - - -, f 5;
-#X obj 320 544 change;
-#X obj 320 566 sel 1;
-#X obj 549 427 inlet feedback;
-#X floatatom 602 456 5 0 0 0 - - -, f 5;
+#X restore 218 530 pd check;
+#X floatatom 218 721 5 0 0 0 - - -, f 5;
+#X obj 320 684 change;
+#X obj 320 706 sel 1;
+#X obj 549 477 inlet feedback;
+#X floatatom 602 506 5 0 0 0 - - -, f 5;
 #N canvas 1360 629 450 377 compare_tc 0;
 #X obj 175 106 -;
 #X floatatom 175 128 5 0 0 0 - - -, f 5;
@@ -512,38 +512,41 @@
 #X connect 11 0 13 0;
 #X connect 13 0 2 0;
 #X connect 13 0 3 0;
-#X restore 461 511 pd compare_tc;
-#X floatatom 461 563 5 0 0 0 - - -, f 5;
-#X floatatom 339 618 5 0 0 0 - - -, f 5;
-#X obj 262 575 change;
-#X obj 262 597 sel 1;
-#X msg 262 619 0;
-#X floatatom 589 561 5 0 0 0 delta - -, f 5;
-#X obj 218 472 t f f;
-#X obj 183 509 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X restore 461 561 pd compare_tc;
+#X floatatom 461 613 5 0 0 0 - - -, f 5;
+#X floatatom 339 758 5 0 0 0 - - -, f 5;
+#X obj 262 655 change;
+#X obj 262 677 sel 1;
+#X msg 262 699 0;
+#X floatatom 589 611 5 0 0 0 delta - -, f 5;
+#X obj 218 552 t f f;
+#X obj 183 589 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 351 432 t f f b;
-#X floatatom 330 466 5 0 0 0 - - -, f 5;
 #X obj 143 193 vinylcontrol~ serato_2a 10, f 27;
 #X obj 351 341 t f f;
 #X obj 351 403 moses, f 9;
-#X obj 409 465 spigot;
-#X obj 479 475 spigot;
-#X obj 459 425 == 0;
+#X obj 409 515 spigot;
+#X obj 479 525 spigot;
+#X obj 459 475 == 0;
 #X obj 449 395 < 1397;
 #X msg 448 320 1397;
 #X text 482 319 face A;
 #X msg 527 340 1301;
 #X text 561 339 face B;
 #X obj 448 294 sel serato_2a serato_2b;
+#X obj 351 482 t f f f;
+#X obj 351 458 spigot, f 7;
+#X text 171 423 when start playing \, vinylcontrol sends some wrong
+TC before passing cue point \, so filter them;
 #X connect 0 0 4 1;
-#X connect 1 0 52 0;
+#X connect 1 0 50 0;
 #X connect 2 0 3 0;
+#X connect 2 0 62 1;
 #X connect 3 0 5 0;
 #X connect 3 0 34 0;
 #X connect 4 0 29 0;
-#X connect 6 0 51 0;
-#X connect 7 0 51 1;
+#X connect 6 0 49 0;
+#X connect 7 0 49 1;
 #X connect 10 0 0 0;
 #X connect 11 0 17 0;
 #X connect 14 0 16 1;
@@ -559,7 +562,7 @@
 #X connect 19 1 25 0;
 #X connect 19 2 17 0;
 #X connect 19 2 22 0;
-#X connect 20 0 53 0;
+#X connect 20 0 51 0;
 #X connect 22 0 23 0;
 #X connect 24 0 20 1;
 #X connect 25 0 26 0;
@@ -567,9 +570,9 @@
 #X connect 28 0 29 1;
 #X connect 28 0 43 0;
 #X connect 29 0 32 0;
-#X connect 30 0 51 2;
+#X connect 30 0 49 2;
 #X connect 31 0 30 0;
-#X connect 31 0 62 0;
+#X connect 31 0 60 0;
 #X connect 32 0 35 0;
 #X connect 32 1 8 0;
 #X connect 33 0 9 0;
@@ -579,7 +582,7 @@
 #X connect 37 0 33 0;
 #X connect 38 0 39 0;
 #X connect 38 0 40 1;
-#X connect 38 0 55 0;
+#X connect 38 0 53 0;
 #X connect 40 0 41 0;
 #X connect 40 0 33 1;
 #X connect 40 1 46 0;
@@ -589,31 +592,31 @@
 #X connect 47 0 4 0;
 #X connect 47 0 48 0;
 #X connect 47 1 36 0;
-#X connect 49 0 28 0;
-#X connect 49 0 50 0;
-#X connect 49 1 54 0;
-#X connect 49 2 34 1;
-#X connect 51 0 2 0;
-#X connect 51 1 10 0;
-#X connect 51 2 16 0;
-#X connect 52 0 20 0;
-#X connect 52 1 57 0;
-#X connect 53 1 49 0;
-#X connect 54 0 40 0;
-#X connect 55 0 40 0;
+#X connect 49 0 2 0;
+#X connect 49 1 10 0;
+#X connect 49 2 16 0;
+#X connect 50 0 20 0;
+#X connect 50 1 55 0;
+#X connect 51 1 62 0;
+#X connect 52 0 40 0;
+#X connect 53 0 40 0;
+#X connect 54 0 53 1;
+#X connect 55 0 52 1;
+#X connect 55 0 54 0;
 #X connect 56 0 55 1;
-#X connect 57 0 54 1;
-#X connect 57 0 56 0;
-#X connect 58 0 57 1;
-#X connect 60 0 57 1;
-#X connect 62 0 58 0;
-#X connect 62 1 60 0;
+#X connect 58 0 55 1;
+#X connect 60 0 56 0;
+#X connect 60 1 58 0;
+#X connect 61 1 28 0;
+#X connect 61 2 34 1;
+#X connect 61 2 52 0;
+#X connect 62 0 61 0;
 #X restore 164 260 pd analysis;
-#N canvas 258 246 858 433 load 1;
+#N canvas 494 289 1335 495 load 0;
 #X obj 273 48 route 9 10 11 12 25 26 27 28;
 #X obj 263 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 293 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 355 98 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -774,7 +777,7 @@
 #X connect 4 0 3 1;
 #X restore 64 58 pd init;
 #X obj 311 226 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 1.4 256;
+-262144 -1 -1 1 256;
 #X floatatom 238 285 5 0 0 0 - - -, f 5;
 #N canvas 0 125 659 456 readme 0;
 #X text 108 21 La valeur de timecode n'est utilisé que lors d'un saut.
@@ -801,7 +804,7 @@ la durée du vinyle.;
 #X text 277 285 Real stretch factor;
 #X text 313 211 Time stretch;
 #X obj 219 226 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 46 256;
+-262144 -1 -1 10 256;
 #X text 221 211 Offset;
 #X floatatom 201 353 5 0 0 0 - - -, f 5;
 #X floatatom 164 353 5 0 0 0 - - -, f 5;

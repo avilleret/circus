@@ -1,4 +1,4 @@
-#N canvas 65 443 661 191 10;
+#N canvas 148 457 661 191 10;
 #N canvas 89 112 1218 655 cache-misere 0;
 #X obj 117 567 gemhead;
 #X obj 117 902 pix_texture;
@@ -424,7 +424,7 @@
 #X obj 416 45 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 0.6 256;
 #X obj 476 45 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 2 256;
+-262144 -1 -1 2.5 256;
 #X obj 416 94 pack 0 0;
 #X obj 476 64 t b f;
 #X obj 416 117 s trans;

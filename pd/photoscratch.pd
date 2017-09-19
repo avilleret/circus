@@ -1,4 +1,4 @@
-#N canvas 148 457 661 191 10;
+#N canvas 148 457 776 214 10;
 #N canvas 335 268 1218 655 cache-misere 0;
 #X obj 117 517 gemhead;
 #X obj 117 902 pix_texture;
@@ -275,24 +275,47 @@
 #X obj 236 607 print;
 #X msg 430 630 45 0 \, 43 64;
 #X obj 117 609 spigot 1;
-#N canvas 0 93 450 300 streamcheck 0;
+#N canvas 565 223 443 501 streamcheck 0;
 #X obj 130 54 inlet;
 #X obj 130 76 t b b;
 #X msg 162 113 1;
 #X obj 130 151 delay 2000;
-#X obj 162 210 outlet;
+#X obj 162 308 outlet;
 #X msg 130 173 0;
 #X obj 206 62 inlet;
+#X obj 162 252 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 162 210 change -1;
+#X obj 311 121 notein;
+#X obj 270 178 stripnote;
+#X obj 270 210 sel 28;
+#X obj 304 378 noteout;
+#X obj 327 349 * 13;
+#X obj 327 328 > 0;
+#X msg 293 344 28;
+#X obj 293 287 t b f;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 1 1 2 0;
-#X connect 2 0 4 0;
+#X connect 2 0 8 0;
 #X connect 3 0 5 0;
-#X connect 5 0 4 0;
+#X connect 5 0 8 0;
 #X connect 6 0 3 1;
+#X connect 7 0 4 0;
+#X connect 7 0 16 0;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 9 1 10 1;
+#X connect 9 2 12 2;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 13 0 12 1;
+#X connect 14 0 13 0;
+#X connect 15 0 12 0;
+#X connect 16 0 15 0;
+#X connect 16 1 14 0;
 #X restore 71 576 pd streamcheck;
-#X obj 140 551 nbx 5 14 -1e+37 1e+37 0 1 empty empty timeout 0 -8 0
-10 -262144 -1 -1 2000 256;
+#X obj 162 550 inlet;
 #X connect 0 0 117 0;
 #X connect 1 0 7 0;
 #X connect 2 0 11 1;
@@ -437,28 +460,32 @@
 #X connect 117 0 13 0;
 #X connect 118 0 117 1;
 #X connect 119 0 118 1;
-#X restore 188 122 pd cache-misere;
-#X text 115 143 Patch de chargement de photos en fonction d'un timecode
+#X restore 188 152 pd cache-misere;
+#X text 115 173 Patch de chargement de photos en fonction d'un timecode
 ;
 #X obj 81 27 bng 15 250 50 0 empty empty load_image_manually 17 7 0
 10 -262144 -1 -1;
 #X msg 240 70 partie1A/10/10_10.jpg;
 #X msg 234 50 partie1B/46/46_1.jpg;
-#X obj 416 45 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 578 55 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 0.6 256;
-#X obj 476 45 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 638 55 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 2.5 256;
-#X obj 416 94 pack 0 0;
-#X obj 476 64 t b f;
-#X obj 416 117 s trans;
-#X obj 536 117 s scale;
-#X obj 536 95 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 578 104 pack 0 0;
+#X obj 638 74 t b f;
+#X obj 578 127 s trans;
+#X obj 698 127 s scale;
+#X obj 698 105 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -262144 -1 -1 1.2 256;
-#X text 536 76 Zoom;
-#X text 422 13 Position;
-#X text 414 27 Horiz.;
-#X text 474 27 Vert.;
+#X text 698 86 Zoom;
+#X text 584 23 Position;
+#X text 576 37 Horiz.;
+#X text 636 37 Vert.;
 #X msg 225 30 mire.png;
+#X obj 290 125 nbx 5 14 -1e+37 1e+37 0 1 empty empty timeout 0 -8 0
+10 -262144 -1 -1 2000 256;
+#X text 346 125 ms;
+#X text 268 95 temps après lequel l'écran devient noir;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
 #X connect 4 0 0 0;
@@ -469,3 +496,4 @@
 #X connect 8 1 7 1;
 #X connect 11 0 10 0;
 #X connect 16 0 0 0;
+#X connect 17 0 0 1;

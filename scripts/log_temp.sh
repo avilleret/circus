@@ -33,7 +33,7 @@ git add *.log
 git commit -m "save the log"
 nms=0
 while [  $nms -lt $ntimes ];  do
-        sensors | grep -A 0  'Core' | cut -c18-21 |tr "\n" "\t" >> /tmp/temp.txt
+        sensors | grep -A 0  'Core' | cut -c17-20 |tr "\n" "\t" >> /tmp/temp.txt
         let nms=nms+1
         sleep  $step
         now=$(date +"%m/%d/%Y %T")

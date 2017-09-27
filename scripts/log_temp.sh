@@ -21,20 +21,25 @@ echo $a $b
 ntimes=$((b/step))
 echo $ntimes
 
-log_file=temp-$dt.log
+
+cd ${0%/*} # change to the directory of relative to this script
+
+fdt=$(date '+%Y.%m.%d-%H.%M.%S');
+log_file=temp-$fdt.log
 
 
 echo "logging...";
-rm $log_file
+git add *.log
+git commit -m "save the log"
 nms=0
 while [  $nms -lt $ntimes ];  do
-        sensors | grep -A 0  'Core' | cut -c18-21 |tr "\n" "\t" >> temp.txt
+        sensors | grep -A 0  'Core' | cut -c18-21 |tr "\n" "\t" >> /tmp/temp.txt
         let nms=nms+1
         sleep  $step
         now=$(date +"%m/%d/%Y %T")
         cpu=$(cat <(grep 'cpu ' /proc/stat) <(sleep 1 && grep 'cpu ' /proc/stat) | awk -v RS="" '{print ($13-$2+$15-$4)*100/($13-$2+$15-$4+$16-$5)}')
 #       echo $now
-        echo -e "$now\t""$(cat temp.txt)""$cpu"  >> $log_file
-        rm temp.txt
+        echo -e "$now\t""$(cat /tmp/temp.txt)""$cpu"  >> $log_file
+        rm /tmp/temp.txt
 done
 

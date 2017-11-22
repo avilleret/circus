@@ -1,4 +1,4 @@
-#N canvas 302 197 469 570 10;
+#N canvas 301 199 469 570 10;
 #X declare -path abs -path bin;
 #X obj 350 83 loadbang;
 #X msg 350 105 \; pd dsp 1;
@@ -356,9 +356,9 @@
 -1 2;
 #X text 182 79 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2832 1;
+-1 -1 4253 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2497 1;
+-1 -1 5453 1;
 #X text 182 96 serato face A;
 #X text 182 111 serato face B;
 #N canvas 881 236 953 840 analysis 0;
@@ -443,7 +443,7 @@
 #X obj 329 128 symbol;
 #X obj 218 684 t f f;
 #X obj 320 728 f, f 7;
-#N canvas 1 213 450 338 check 0;
+#N canvas 2 213 450 338 check 0;
 #N canvas 0 151 450 300 stream_check 0;
 #X obj 71 79 t b b;
 #X msg 71 127 1;
@@ -504,7 +504,7 @@
 #X obj 320 684 change;
 #X obj 320 706 sel 1;
 #X obj 549 471 inlet feedback;
-#N canvas 290 594 450 377 compare_tc 0;
+#N canvas 290 594 553 360 compare_tc 0;
 #X obj 160 116 -;
 #X floatatom 160 138 5 0 0 0 - - -, f 5;
 #X obj 160 215 == 0;
@@ -517,8 +517,10 @@
 #X obj 162 314 outlet;
 #X obj 160 157 abs;
 #X obj 322 301 outlet;
-#X obj 160 184 < 1;
 #X obj 121 74 t f f f;
+#X obj 160 184 < 5;
+#X text 188 185 <-- augmenter cette valeur s'il y a encore des problèmes
+;
 #X connect 0 0 1 0;
 #X connect 1 0 10 0;
 #X connect 1 0 11 0;
@@ -527,14 +529,14 @@
 #X connect 4 0 9 0;
 #X connect 5 0 4 0;
 #X connect 6 0 9 0;
-#X connect 7 0 13 0;
+#X connect 7 0 12 0;
 #X connect 8 0 5 0;
-#X connect 10 0 12 0;
-#X connect 12 0 2 0;
-#X connect 12 0 3 0;
-#X connect 13 0 6 0;
-#X connect 13 1 0 1;
-#X connect 13 2 0 0;
+#X connect 10 0 13 0;
+#X connect 12 0 6 0;
+#X connect 12 1 0 1;
+#X connect 12 2 0 0;
+#X connect 13 0 2 0;
+#X connect 13 0 3 0;
 #X restore 461 591 pd compare_tc;
 #X floatatom 461 643 5 0 0 0 - - -, f 5;
 #X floatatom 339 758 5 0 0 0 - - -, f 5;
@@ -563,6 +565,7 @@ TC before passing cue point \, so filter them;
 #X obj 329 66 r vinyl;
 #X obj 218 552 t f f f;
 #X obj 549 520 spigot;
+#X text 546 588 <-- il y a un seuil à régler là dedans;
 #X connect 0 0 4 1;
 #X connect 1 0 47 0;
 #X connect 2 0 3 0;
@@ -638,7 +641,7 @@ TC before passing cue point \, so filter them;
 #X connect 63 0 38 1;
 #X connect 63 0 50 0;
 #X restore 164 260 pd analysis;
-#N canvas -127 272 1364 495 load 1;
+#N canvas 170 518 1364 495 load 1;
 #X obj 293 98 route 9 10 11 12 25 26 27 28, f 127;
 #X obj 220 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -653,7 +656,7 @@ TC before passing cue point \, so filter them;
 #X obj 1054 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 1214 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 1316 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
 #N canvas 304 283 692 503 notein 0;

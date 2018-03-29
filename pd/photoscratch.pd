@@ -1,4 +1,4 @@
-#N canvas 144 461 776 214 10;
+#N canvas 142 463 776 214 10;
 #N canvas 335 268 1218 655 cache-misere 0;
 #X obj 117 517 gemhead;
 #X obj 117 902 pix_texture;
@@ -456,10 +456,10 @@
 10 -262144 -1 -1;
 #X msg 240 70 partie1A/10/10_10.jpg;
 #X msg 234 50 partie1B/46/46_1.jpg;
-#X obj 578 55 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0.6 256;
+#X obj 575 56 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
 #X obj 638 55 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 2.2 256;
+-262144 -1 -1 1.8 256;
 #X obj 578 104 pack 0 0;
 #X obj 638 74 t b f;
 #X obj 578 127 s trans;

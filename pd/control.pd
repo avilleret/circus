@@ -1,4 +1,4 @@
-#N canvas 452 80 469 570 10;
+#N canvas 473 84 469 570 10;
 #X declare -path abs -path bin;
 #X obj 350 83 loadbang;
 #X msg 350 105 \; pd dsp 1;
@@ -356,12 +356,12 @@
 -1 2;
 #X text 182 79 live input;
 #X obj 29 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1029 1;
+-1 -1 8175 1;
 #X obj 69 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1203 1;
+-1 -1 8098 1;
 #X text 182 96 serato face A;
 #X text 182 111 serato face B;
-#N canvas 404 80 953 687 analysis 1;
+#N canvas 225 233 953 687 analysis 0;
 #X floatatom 236 241 5 0 0 0 speed - -, f 5;
 #X floatatom 351 318 5 0 0 0 position - -, f 5;
 #X obj 143 302 route float;
@@ -482,7 +482,7 @@
 #X obj 17 25 inlet;
 #X obj 83 25 inlet;
 #X obj 76 317 outlet;
-#X obj 115 153 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 115 153 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 108 224 sel 1;
 #X obj 76 198 t f f;
@@ -504,7 +504,7 @@
 #X obj 320 684 change;
 #X obj 320 706 sel 1;
 #X obj 549 471 inlet feedback;
-#N canvas 345 304 553 360 compare_tc 1;
+#N canvas 339 310 553 360 compare_tc 0;
 #X obj 160 116 -;
 #X floatatom 160 138 5 0 0 0 - - -, f 5;
 #X obj 160 215 == 0;
@@ -520,7 +520,7 @@
 #X obj 121 74 t f f f;
 #X text 188 185 <-- augmenter cette valeur s'il y a encore des problèmes
 ;
-#X obj 161 184 < 10;
+#X obj 161 184 < 20;
 #X connect 0 0 1 0;
 #X connect 1 0 10 0;
 #X connect 1 0 11 0;
@@ -544,7 +544,7 @@
 #X obj 262 677 sel 1;
 #X msg 262 699 0;
 #X floatatom 589 651 10 0 0 0 delta - -, f 10;
-#X obj 183 589 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 183 589 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 143 193 vinylcontrol~ serato_2a 10, f 27;
 #X obj 351 341 t f f;
@@ -641,20 +641,20 @@ TC before passing cue point \, so filter them;
 #X connect 63 0 38 1;
 #X connect 63 0 50 0;
 #X restore 164 260 pd analysis;
-#N canvas 1 645 1358 495 load 1;
+#N canvas 1 172 1358 495 load 1;
 #X obj 293 98 route 9 10 11 12 25 26 27 28, f 127;
 #X obj 220 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 394 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 560 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 560 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 718 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 888 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 1054 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 1214 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 1316 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
@@ -671,7 +671,7 @@ TC before passing cue point \, so filter them;
 #X obj 240 290 outlet;
 #X obj 274 139 sel 28;
 #X text 75 141 filter out le dernier bouton;
-#X obj 168 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 168 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 82 93 netreceive 45678;
 #X obj 225 227 s osc;
@@ -710,7 +710,6 @@ TC before passing cue point \, so filter them;
 #X obj 1214 193 sel 1;
 #X obj 1374 194 sel 1;
 #X text 37 305 face offset timestretch;
-#X msg 569 259 \; image partie1B 120;
 #X msg 1383 259 \; image test3-108BPM 108;
 #X text -3 267 <nom_du_dossier> <bpm> <offset>;
 #X msg 233 225 \; son PANCARTES.wav;
@@ -722,19 +721,20 @@ TC before passing cue point \, so filter them;
 #X msg 1394 225 \; son SORTIE.wav;
 #X msg 394 297 \; vinyl serato_2a 46 1.4;
 #X msg 1374 297 \; vinyl serato_2b 10 1;
-#X msg 406 259 \; image partie1A 120 0.4;
 #X msg 896 259 \; image partie2A 120 1.94;
 #X msg 731 259 \; image Entracte 120 -2;
 #X msg 228 259 \; image rien 2000;
 #X msg 220 297 \; vinyl serato_2b 10 1;
 #X msg 560 297 \; vinyl serato_2b 10 1;
-#X msg 1054 297 \; vinyl serato_2b 10 1;
 #X msg 1214 297 \; vinyl serato_2b 10 1;
 #X msg 718 297 \; vinyl serato_2a 36 1;
 #X msg 888 297 \; vinyl serato_2a 35 1;
 #X msg 737 225 \; son ENTRACTE.wav;
 #X msg 1221 259 \; image Sortie 120;
-#X msg 1063 259 \; image partie2B 120 0.5;
+#X msg 558 260 \; image partie1B 120 0.8;
+#X msg 395 260 \; image partie1A 120 0.8;
+#X msg 1054 297 \; vinyl serato_2b 10 1;
+#X msg 1063 259 \; image partie2B 120 1;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 0 2 3 0;
@@ -751,30 +751,30 @@ TC before passing cue point \, so filter them;
 #X connect 7 0 16 0;
 #X connect 8 0 17 0;
 #X connect 9 0 0 0;
-#X connect 10 0 22 0;
-#X connect 10 0 34 0;
-#X connect 10 0 35 0;
-#X connect 11 0 23 0;
-#X connect 11 0 31 0;
-#X connect 11 0 29 0;
-#X connect 12 0 24 0;
-#X connect 12 0 19 0;
-#X connect 12 0 36 0;
-#X connect 13 0 41 0;
-#X connect 13 0 33 0;
-#X connect 13 0 39 0;
-#X connect 14 0 25 0;
-#X connect 14 0 32 0;
-#X connect 14 0 40 0;
-#X connect 15 0 26 0;
+#X connect 10 0 21 0;
+#X connect 10 0 32 0;
+#X connect 10 0 33 0;
+#X connect 11 0 22 0;
+#X connect 11 0 41 0;
+#X connect 11 0 28 0;
+#X connect 12 0 23 0;
+#X connect 12 0 40 0;
+#X connect 12 0 34 0;
+#X connect 13 0 38 0;
+#X connect 13 0 31 0;
+#X connect 13 0 36 0;
+#X connect 14 0 24 0;
+#X connect 14 0 30 0;
+#X connect 14 0 37 0;
+#X connect 15 0 25 0;
 #X connect 15 0 43 0;
-#X connect 15 0 37 0;
-#X connect 16 0 27 0;
-#X connect 16 0 42 0;
-#X connect 16 0 38 0;
-#X connect 17 0 28 0;
-#X connect 17 0 20 0;
-#X connect 17 0 30 0;
+#X connect 15 0 42 0;
+#X connect 16 0 26 0;
+#X connect 16 0 39 0;
+#X connect 16 0 35 0;
+#X connect 17 0 27 0;
+#X connect 17 0 19 0;
+#X connect 17 0 29 0;
 #X restore 85 192 pd load;
 #N canvas 340 225 859 300 init 0;
 #X obj 131 85 declare -path abs -path bin;
@@ -828,9 +828,9 @@ la durée du vinyle.;
 #X obj 306 316 env~;
 #X floatatom 306 338 5 0 0 0 - - -, f 5;
 #X obj 267 360 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 7636 1;
 #X obj 307 360 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 7712 1;
 #X floatatom 359 532 5 0 0 0 - - -, f 5;
 #X text 62 531 position en seconde dans le fichier audio, f 42;
 #X connect 0 0 1 0;
